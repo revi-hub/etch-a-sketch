@@ -1,4 +1,5 @@
 #pixels-container{
+    outline: 2px solid black;
     display: flex;
     flex-wrap: wrap;
     height: 40vw;
