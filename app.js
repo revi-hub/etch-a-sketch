@@ -32,9 +32,16 @@ pixelsContainer.addEventListener("mouseover", (e) => {
 });
 
 btn.addEventListener("click", () => {
-
+    while(true){
     const numberOfPixels = prompt("Please specify number of pixels per side: ");
+    if(numberOfPixels == null)
+    break;
     pixels = createGrid(numberOfPixels);
+    if(pixels != null){
+        break;
+    }
+    alert("Error, the number should be between 1 and 100 inclusively!");
+    }
 });
 
 
