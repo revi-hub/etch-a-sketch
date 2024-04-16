@@ -23,7 +23,13 @@ function createGrid(size){
     }   
 }
 
-createGrid(16);
+function deleteGrid(pixels){
+    for(let i = 0; i < pixels; i++){
+        pixelsContainer.lastElementChild.remove();
+    }
+}
+
+pixels = createGrid(16);
 
 
 pixelsContainer.addEventListener("mouseover", (e) => {
@@ -36,6 +42,7 @@ btn.addEventListener("click", () => {
     const numberOfPixels = prompt("Please specify number of pixels per side: ");
     if(numberOfPixels == null)
     break;
+    deleteGrid(pixels);
     pixels = createGrid(numberOfPixels);
     if(pixels != null){
         break;
