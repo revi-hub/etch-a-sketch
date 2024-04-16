@@ -54,4 +54,8 @@ btn.addEventListener("click", () => {
     }
 });
 
+pixelsContainer.addEventListener("dragstart", (e)=>{
+    e.preventDefault();
+});
+
 
