@@ -1,4 +1,4 @@
-const flexContainer = document.getElementById("flex-container");
+const pixelsContainer = document.getElementById("pixels-container");
 let pixels = [];
 
 for(var i = 0; i < 256; i++) {
