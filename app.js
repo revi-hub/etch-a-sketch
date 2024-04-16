@@ -32,9 +32,12 @@ function deleteGrid(pixels){
 pixels = createGrid(16);
 
 
-pixelsContainer.addEventListener("dragover", (e) => {
-    if(e.target.classList.contains("pixel"))
-    e.target.classList.add("drawn");
+pixelsContainer.addEventListener("mousemove", (e) => {
+    if(e.target.classList.contains("pixel")){
+        if(e.buttons == 1){
+            e.target.classList.add("drawn");
+        }
+    }
 });
 
 btn.addEventListener("click", () => {
