@@ -4,6 +4,9 @@
     flex-wrap: wrap;
     height: 40vw;
     width: 40vw;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #pixels-container > div{
@@ -19,6 +22,8 @@
     height: 4.5vw;
     margin-top: 10px;
     width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .color{
@@ -74,6 +79,15 @@
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+button{
+    width: 150px;
+    height: 20px;
+}
+
+body{
+    text-align: center;
 }
 
 @keyframes selected{
