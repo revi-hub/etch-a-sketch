@@ -31,11 +31,16 @@ function deleteGrid(pixels){
 
 pixels = createGrid(16);
 
+function getRandomRGB(){
+    const RGB = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
+    return RGB;
+}
+
 
 pixelsContainer.addEventListener("mousemove", (e) => {
     if(e.target.classList.contains("pixel")){
         if(e.buttons == 1){
-            e.target.classList.add("drawn");
+            e.target.style.backgroundColor = getRandomRGB();
         }
     }
 });
@@ -57,5 +62,7 @@ btn.addEventListener("click", () => {
 pixelsContainer.addEventListener("dragstart", (e)=>{
     e.preventDefault();
 });
+
+
 
 
