@@ -13,6 +13,7 @@ function createGrid(size){
         size = size * size;
         for(let i = 0; i < size; i++) {
             pixels.push(document.createElement("div"));
+            pixels[i].style.backgroundColor = "white";
             pixels[i].style.width = width;
             pixels[i].classList.add("pixel");
             pixelsContainer.appendChild(pixels[i]);
