@@ -1,7 +1,7 @@
 const pixelsContainer = document.getElementById("pixels-container");
 const paletteContainer = document.getElementById("palette-container");
 const btn = document.querySelector("button");
-let selectedColor = "random";
+let selectedColor = document.getElementById("white");
 let pixels;
 
 function createGrid(size){
@@ -45,10 +45,10 @@ pixelsContainer.addEventListener("mousemove", (e) => {
         if(e.buttons == 1){
             if(!e.target.classList.contains("drawn")){
                 e.target.classList.toggle("drawn");
-                if(selectedColor == "random")
+                if(selectedColor.getAttribute("id") == "rainbow")
                     e.target.style.backgroundColor = getRandomRGB();
                 else
-                    e.target.style.backgroundColor = selectedColor;
+                    e.target.style.backgroundColor = selectedColor.getAttribute("id");
                 setTimeout(() => {
                     e.target.classList.toggle("drawn");
                 }, 500);
@@ -76,7 +76,9 @@ pixelsContainer.addEventListener("dragstart", (e)=>{
 });
 
 paletteContainer.addEventListener("click", (e) =>{
-    selectedColor = e.target.getAttribute("id");
+    selectedColor.classList.toggle("selected");
+    selectedColor = e.target;
+    selectedColor.classList.toggle("selected");
 })
 
 
