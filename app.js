@@ -40,7 +40,13 @@ function getRandomRGB(){
 pixelsContainer.addEventListener("mousemove", (e) => {
     if(e.target.classList.contains("pixel")){
         if(e.buttons == 1){
-            e.target.style.backgroundColor = getRandomRGB();
+            if(!e.target.classList.contains("drawn")){
+                e.target.classList.toggle("drawn");
+                e.target.style.backgroundColor = getRandomRGB();
+                setTimeout(() => {
+                    e.target.classList.toggle("drawn");
+                }, 500);
+            }
         }
     }
 });
